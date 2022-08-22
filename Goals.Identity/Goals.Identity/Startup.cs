@@ -49,7 +49,7 @@ namespace Goals.Identity
 
             services.ConfigureApplicationCookie(config =>
             {
-                config.Cookie.Name = "Notes.Identity.Cookie";
+                config.Cookie.Name = "Goals.Identity.Cookie";
                 config.LoginPath = "/Auth/Login";
                 config.LogoutPath = "/Auth/Logout";
             });
