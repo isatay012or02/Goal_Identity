@@ -11,7 +11,7 @@ namespace Goals.Identity
         public static IEnumerable<ApiScope> ApiScopes =>
             new List<ApiScope>
             {
-                new ApiScope("NotesWebAPI", "Web API")
+                new ApiScope("GoalsWebAPI", "Web API")
             };
 
         public static IEnumerable<IdentityResource> IdentityResources =>
@@ -24,10 +24,10 @@ namespace Goals.Identity
         public static IEnumerable<ApiResource> ApiResources =>
             new List<ApiResource>
             {
-                new ApiResource("NotesWebAPI", "Web API", new []
+                new ApiResource("GoalsWebAPI", "Web API", new []
                     { JwtClaimTypes.Name})
                 {
-                    Scopes = {"NotesWebAPI"}
+                    Scopes = {"GoalsWebAPI"}
                 }
             };
 
@@ -36,8 +36,8 @@ namespace Goals.Identity
             {
                 new Client
                 {
-                    ClientId = "notes-web-api",
-                    ClientName = "Notes Web",
+                    ClientId = "goals-web-api",
+                    ClientName = "Goals Web",
                     AllowedGrantTypes = GrantTypes.Code,
                     RequireClientSecret = false,
                     RequirePkce = true,
@@ -57,7 +57,7 @@ namespace Goals.Identity
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
-                        "NotesWebAPI"
+                        "GoalsWebAPI"
                     },
                     AllowAccessTokensViaBrowser = true
                 }
